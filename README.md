@@ -1,2 +1,2 @@
 # LD48
-My game for Ludam Dare 48
+My game for Ludum Dare 48
