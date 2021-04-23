@@ -3,8 +3,8 @@ My game for Ludum Dare 48
 
 
 # [Play on Itch.io](https://cammin.itch.io/ld48-game-working-title) (Not Ready Yet)
-## [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042) (Not Ready Yet)
-## [Public Trello](https://trello.com/b/BvTN68Ud/ld48)
+### [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042) (Not Ready Yet)
+### [Public Trello](https://trello.com/b/BvTN68Ud/ld48)
 
 ### Personal goals I've set out to do:
 - Learn Unity's new Input system better (Trying to learn how to use it simply instead of overengineering it due to not understanding the package enough)
