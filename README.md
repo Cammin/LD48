@@ -1,8 +1,8 @@
 # LD48
 My game for Ludum Dare 48
 
-# [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042)
-# [Play on Itch.io](https://cammin.itch.io/ld48-game-working-title)
+# [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042) (Not Ready Yet)
+# [Play on Itch.io](https://cammin.itch.io/ld48-game-working-title) (Not Ready Yet)
 
 ### Personal goals I've set out to do:
 - Learn Unity's new Input system better (Trying to learn how to use it simply instead of overengineering it due to not understanding the package enough)
