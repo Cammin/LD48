@@ -8,4 +8,4 @@ My game for Ludum Dare 48
 - Make level(s) using my own [LDtkToUnity](https://github.com/Cammin/LDtkUnity) tool
 - Potentially try [Unity's new pooling](https://docs.unity3d.com/2021.1/Documentation/ScriptReference/Pool.ObjectPool_1.html) options  
 
-- Make a simple experience that follows the theme. Create what sounds most fun without overscope. I'm thinking of making a top down action game.
+- Make a simple experience that follows the theme. Create what sounds most fun without overscope. I'm thinking of making a tile-based top-down action game.
