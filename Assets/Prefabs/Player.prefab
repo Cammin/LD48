@@ -66,7 +66,7 @@ MonoBehaviour:
   _axis: {fileID: -6232383100554721944, guid: 240a693287fbe5a4a908c21c626b80fb, type: 3}
   _rb: {fileID: 204680060286323200}
   _renderer: {fileID: 5113844082548056511}
-  _moveSpeed: 1
+  _moveSpeed: 20
   _maxSpeed: 5
   _turnAroundThreshold: 0.1
 --- !u!50 &204680060286323200
@@ -176,8 +176,8 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
-  m_ShadowIntensity: 0.75
+  m_ShadowIntensityEnabled: 1
+  m_ShadowIntensity: 0.2
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_Vertices:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 7.697115
+  m_PointLightOuterRadius: 8.33
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -241,8 +241,30 @@ MonoBehaviour:
   _light: {fileID: 5677472971912955347}
   _smooth: 1
   _maxSmoothSpeed: 100
-  _minimumVisibility: 0.2
-  _decaySpeed: 0.2
+  _maximumVisibility: 10
+  _minimumVisibility: 1.25
+  _decaySpeed: 0.25
+--- !u!50 &7997621817473850122
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772896260716679757}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1185858808576221586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 6437531721940673314, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
+--- !u!1 &7772896260716679757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8143315730797639732, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
+  m_PrefabInstance: {fileID: 1935423539669756537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4468746623652818183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2654920448201754494, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}

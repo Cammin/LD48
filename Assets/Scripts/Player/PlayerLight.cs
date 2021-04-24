@@ -9,6 +9,7 @@ public class PlayerLight : MonoBehaviour
     [SerializeField] private float _smooth = 1;
     [SerializeField] private float _maxSmoothSpeed = 100;
 
+    [SerializeField] private float _maximumVisibility = 10f;
     [SerializeField] private float _minimumVisibility = 0.2f;
     [SerializeField] private float _decaySpeed;
     
@@ -32,7 +33,7 @@ public class PlayerLight : MonoBehaviour
 
     public void DecayUpdate()
     {
-        _targetVisbility = Mathf.Max(_targetVisbility - Time.deltaTime * _decaySpeed, _minimumVisibility);
+        _targetVisbility = Mathf.Clamp(_targetVisbility - Time.deltaTime * _decaySpeed, _minimumVisibility, _maximumVisibility);
     }
 
     public void IncreaseVisibility(float amount)
