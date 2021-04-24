@@ -7,9 +7,14 @@ public class UnderwaterObjectPooler<T> : ComponentPooler<T> where T : Underwater
     {
     }
 
-    protected override void OnGet(T obj)
+    protected override void OnGet(IPooledObject obj)
     {
         base.OnGet(obj);
-        obj.Init();
+        UnderwaterObject underwaterObject = obj as UnderwaterObject;
+        if (underwaterObject)
+        {
+            underwaterObject.Init();
+        }
     }
+    
 }

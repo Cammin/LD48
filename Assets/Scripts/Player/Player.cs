@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player : MonoBehaviour
 { 
@@ -9,5 +10,17 @@ public class Player : MonoBehaviour
     {
         _light.IncreaseVisibility(lightAmount);
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (!GameManager.HasGameStarted || GameManager.HasGameEnded)
+        {
+            return;
+        }
         
+        if (other.gameObject.TryGetComponent(out Urchin urchin))
+        {
+            GameManager.EndGame();
+        }
+    }
 }

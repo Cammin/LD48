@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
@@ -15,6 +16,12 @@ public class PlayerLight : MonoBehaviour
     private float _targetVisbility;
 
     private float _currentVelocity;
+
+    private void Start()
+    {
+        _targetVisbility = _light.pointLightOuterRadius;
+        _currentVisibility = _targetVisbility;
+    }
 
     private void Update()
     {
@@ -36,6 +43,6 @@ public class PlayerLight : MonoBehaviour
     public void UpdateLight()
     {
         _currentVisibility = Mathf.SmoothDamp(_currentVisibility, _targetVisbility, ref _currentVelocity, _smooth, _maxSmoothSpeed, Time.deltaTime);
-        _light.intensity = _currentVisibility;
+        _light.pointLightOuterRadius = _currentVisibility;
     }
 }

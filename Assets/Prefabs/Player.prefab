@@ -89,7 +89,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1617170611723141662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.602
+  m_FalloffIntensity: 0.104
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -238,11 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55dc0a5486cd23241b69258352421989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _light: {fileID: 0}
+  _light: {fileID: 5677472971912955347}
   _smooth: 1
   _maxSmoothSpeed: 100
   _minimumVisibility: 0.2
-  _decaySpeed: 0
+  _decaySpeed: 0.2
 --- !u!1001 &1185858808576221586
 PrefabInstance:
   m_ObjectHideFlags: 0

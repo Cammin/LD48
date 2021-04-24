@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Pool;
-using Object = UnityEngine.Object;
 
 public abstract class GameSpawner<T> : MonoBehaviour where T : UnderwaterObject, IPooledObject
 {
@@ -34,6 +29,7 @@ public abstract class GameSpawner<T> : MonoBehaviour where T : UnderwaterObject,
         }
 
         Spawn();
+        SetTimer();
     }
 
     private void Spawn()

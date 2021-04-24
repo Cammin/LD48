@@ -20,6 +20,7 @@ public class GlobalLighting : Singleton<GlobalLighting>
     private void Start()
     {
         _targetIntensity = _light.intensity;
+        _currentIntensity = _targetIntensity;
     }
 
     public void Update()

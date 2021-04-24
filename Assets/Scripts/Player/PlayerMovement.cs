@@ -12,11 +12,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _turnAroundThreshold = 0.1f;
-    
+
+    private void Start()
+    {
+        _axis.action.Enable();
+    }
+
     private void FixedUpdate()
     {
         Vector2 input = _axis.action.ReadValue<Vector2>();
-
+        
+        
         //move
         _rb.AddForce(input * _moveSpeed, ForceMode2D.Force);
         
@@ -27,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         
         //renderer
         float xVel = _rb.velocity.x;
-        if (xVel > _turnAroundThreshold)
+        if (Mathf.Abs(xVel) > _turnAroundThreshold)
         {
             _renderer.flipX = xVel < 0;
         }

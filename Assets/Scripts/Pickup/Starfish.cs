@@ -8,6 +8,4 @@ public class Starfish : Pickup
     {
         GlobalLighting.SetIntensity(_instensityUponCollect);
     }
-
-    public UnderwaterObject UnderwaterObject { get; }
 }

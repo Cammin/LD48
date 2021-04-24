@@ -3,12 +3,12 @@ using UnityEngine.Pool;
 
 namespace DefaultNamespace
 {
-    public class ReturnToPool<T> : MonoBehaviour where T : Component, IPooledObject
+    public class ReturnToPool : MonoBehaviour
     {
-        private T _pooledObject;
-        private IObjectPool<T> _pool;
+        private IPooledObject _pooledObject;
+        private IObjectPool<IPooledObject> _pool;
         
-        public void Init(IObjectPool<T> pool, T pooledObject)
+        public void Init(IObjectPool<IPooledObject> pool, IPooledObject pooledObject)
         {
             _pool = pool;
             _pooledObject = pooledObject;

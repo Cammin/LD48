@@ -5,41 +5,42 @@ using UnityEngine.Pool;
 public abstract class ComponentPooler<T> where T : Component, IPooledObject
 {
     private readonly T _prefab;
-    private readonly IObjectPool<T> _pool;
+    private readonly IObjectPool<IPooledObject> _pool;
 
 
     public T Get()
     {
-        return _pool.Get();
+        Component pooledObject = _pool.Get().PooledObj;
+        return pooledObject as T;
     }
     
     protected ComponentPooler(T prefab)
     {
         _prefab = prefab;
-        _pool = new ObjectPool<T>(OnCreate, OnGet, OnRelease, OnDestroy);
+        _pool = new ObjectPool<IPooledObject>(OnCreate, OnGet, OnRelease, OnDestroy);
     }
 
-    protected virtual T OnCreate()
+    protected virtual IPooledObject OnCreate()
     {
         T pooledObject = Object.Instantiate(_prefab);
-        ReturnToPool<T> returnToPool = pooledObject.gameObject.AddComponent<ReturnToPool<T>>();
+        ReturnToPool returnToPool = pooledObject.gameObject.AddComponent<ReturnToPool>();
         returnToPool.Init(_pool, pooledObject);
         
         return pooledObject;
     }
     
-    protected virtual void OnGet(T obj)
+    protected virtual void OnGet(IPooledObject obj)
     {
-        obj.gameObject.SetActive(true);
+        obj.PooledObj.gameObject.SetActive(true);
     }
     
-    protected virtual void OnRelease(T obj)
+    protected virtual void OnRelease(IPooledObject obj)
     {
-        obj.gameObject.SetActive(false);
+        obj.PooledObj.gameObject.SetActive(false);
     }
     
-    protected virtual void OnDestroy(T obj)
+    protected virtual void OnDestroy(IPooledObject obj)
     {
-        Object.Destroy(obj.gameObject);
+        Object.Destroy(obj.PooledObj.gameObject);
     }
 }
