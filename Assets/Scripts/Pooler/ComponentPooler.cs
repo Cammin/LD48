@@ -1,5 +1,4 @@
-﻿using DefaultNamespace;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Pool;
 
 public abstract class ComponentPooler<T> where T : Component, IPooledObject
@@ -23,8 +22,8 @@ public abstract class ComponentPooler<T> where T : Component, IPooledObject
     protected virtual IPooledObject OnCreate()
     {
         T pooledObject = Object.Instantiate(_prefab);
-        ReturnToPool returnToPool = pooledObject.gameObject.AddComponent<ReturnToPool>();
-        returnToPool.Init(_pool, pooledObject);
+        ReturnToPool particleReturnToPool = pooledObject.gameObject.AddComponent<ReturnToPool>();
+        particleReturnToPool.Init(_pool, pooledObject);
         
         return pooledObject;
     }

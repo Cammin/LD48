@@ -1,5 +1,4 @@
-﻿using DefaultNamespace;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UnderwaterObjectPooler<T> : ComponentPooler<T> where T : UnderwaterObject, IPooledObject
 {

@@ -1,10 +1,9 @@
 ﻿using System;
-using DefaultNamespace;
 using UnityEngine;
 
 public abstract class UnderwaterObject : MonoBehaviour, IPooledObject
 {
-    private const float DESPAWN_POSITION = 10;
+    private const float DESPAWN_POSITION = 15;
     
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private float _spawnAngularVelocity;
@@ -14,8 +13,8 @@ public abstract class UnderwaterObject : MonoBehaviour, IPooledObject
 
     public void Init()
     {
-        _rb.AddForce(Vector2.up * GameManager.DescendSpeed);
-        _rb.AddTorque(_spawnAngularVelocity.AsRandomVariance(), ForceMode2D.Impulse);
+        _rb.velocity = Vector2.up * GameManager.DescendSpeed;
+        _rb.angularVelocity = _spawnAngularVelocity.AsRandomVariance();
     }
 
 

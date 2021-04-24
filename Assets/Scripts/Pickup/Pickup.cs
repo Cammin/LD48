@@ -3,8 +3,8 @@ using UnityEngine;
 
 public abstract class Pickup : UnderwaterObject
 {
-    
-    
+    [SerializeField] private AudioClip _collectSound;
+    [SerializeField] private Color _collectFXColor;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +15,10 @@ public abstract class Pickup : UnderwaterObject
 
         Debug.Log("PICKUP");
         OnPickup(player);
+        AudioSource.PlayClipAtPoint(_collectSound, Vector3.zero);
+        ParticlePool.Create(transform.position, _collectFXColor);
+        
+        
         Release();
         
     }

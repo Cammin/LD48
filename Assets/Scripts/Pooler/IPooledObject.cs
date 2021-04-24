@@ -1,11 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+public interface IPooledObject
 {
-    public interface IPooledObject
-    {
-        Component PooledObj { get; }
-        event Action ReleaseAction;
-    }
+    Component PooledObj { get; }
+    event Action ReleaseAction;
 }

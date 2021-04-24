@@ -1,19 +1,34 @@
-using DefaultNamespace;
+using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class GameSpawner<T> : MonoBehaviour where T : UnderwaterObject, IPooledObject
+public class GameSpawner : MonoBehaviour
 {
-    [SerializeField] private T _prefab;
+    [SerializeField] private UnderwaterObject[] _prefabs;
     [SerializeField] private AnimationCurve _spawnTimeOverTime;
+    [SerializeField] private float _spawnVariancePosition;
     
     private readonly Timer _spawnCooldown = new Timer();
 
-    private UnderwaterObjectPooler<T> _pooler;
+    private readonly Dictionary<UnderwaterObject, UnderwaterObjectPooler<UnderwaterObject>> _poolers = new Dictionary<UnderwaterObject, UnderwaterObjectPooler<UnderwaterObject>>();
+    
 
-    private void Awake()
+    public void TryAddDictionaryEntry(UnderwaterObject obj)
     {
-        _pooler = new UnderwaterObjectPooler<T>(_prefab);
+        if (_poolers.ContainsKey(obj))
+        {
+            return;
+        }
+        _poolers.Add(obj, new UnderwaterObjectPooler<UnderwaterObject>(obj));
     }
+
+    public UnderwaterObjectPooler<UnderwaterObject> GetPoolerForPrefab(UnderwaterObject obj)
+    {
+        TryAddDictionaryEntry(obj);
+        
+        return _poolers[obj];
+    }
+    
+    
 
     private void Start()
     {
@@ -34,7 +49,13 @@ public abstract class GameSpawner<T> : MonoBehaviour where T : UnderwaterObject,
 
     private void Spawn()
     {
-        T underwaterObject = _pooler.Get();
+        UnderwaterObject atRandom = _prefabs.PickAtRandom();
+        UnderwaterObjectPooler<UnderwaterObject> pooler = GetPoolerForPrefab(atRandom);
+        UnderwaterObject underwaterObject = pooler.Get();
+        
+        transform.position = new Vector2(_spawnVariancePosition.AsRandomVariance(), transform.position.y);
+        underwaterObject.PooledObj.transform.position = transform.position;
+        underwaterObject.Init();
     }
 
     private void SetTimer()

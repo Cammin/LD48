@@ -62,6 +62,12 @@ SpriteAtlas:
     - {fileID: -3477856756702442466, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
     - {fileID: 3526307606565726050, guid: ad33e31eb7336c2448bbdb1fc793ea98, type: 3}
     - {fileID: -5143087650851034209, guid: f09c718a18b84c449acd83be42b0d2f1, type: 3}
+    - {fileID: -1722777087426869409, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+    - {fileID: -8878513221033722082, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+    - {fileID: -5807987444940971551, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+    - {fileID: -4546570782930855285, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+    - {fileID: 7637290059257903065, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+    - {fileID: 21300000, guid: 58253afe75d774c45bba5b649a482915, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -73,6 +79,7 @@ SpriteAtlas:
   - {fileID: -8878513221033722082, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
   - {fileID: -5807987444940971551, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
   - {fileID: -4546570782930855285, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
+  - {fileID: 7637290059257903065, guid: e340161c883607c4aa88406e6ffb1e74, type: 3}
   - {fileID: 3526307606565726050, guid: ad33e31eb7336c2448bbdb1fc793ea98, type: 3}
   - {fileID: 21300000, guid: 58253afe75d774c45bba5b649a482915, type: 3}
   - {fileID: -3477856756702442466, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
@@ -83,6 +90,7 @@ SpriteAtlas:
   - Player.Sprites._1
   - Player.Sprites._2
   - Player.Sprites._3
+  - Player.Sprites._4
   - Urchin.Sprites._0
   - aseprite2unity-atlas-marker
   - Rope.Sprites._0

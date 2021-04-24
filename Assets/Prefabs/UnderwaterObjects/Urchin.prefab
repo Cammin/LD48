@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7793926318271629577}
-  _spawnAngularVelocity: 5
+  _spawnAngularVelocity: 10
 --- !u!1001 &1181650814533909072
 PrefabInstance:
   m_ObjectHideFlags: 0

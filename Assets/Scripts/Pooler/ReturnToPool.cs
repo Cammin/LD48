@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.Pool;
 
-namespace DefaultNamespace
+public class ReturnToPool : MonoBehaviour
 {
-    public class ReturnToPool : MonoBehaviour
-    {
-        private IPooledObject _pooledObject;
-        private IObjectPool<IPooledObject> _pool;
+    private IPooledObject _pooledObject;
+    private IObjectPool<IPooledObject> _pool;
         
-        public void Init(IObjectPool<IPooledObject> pool, IPooledObject pooledObject)
-        {
-            _pool = pool;
-            _pooledObject = pooledObject;
+    public void Init(IObjectPool<IPooledObject> pool, IPooledObject pooledObject)
+    {
+        _pool = pool;
+        _pooledObject = pooledObject;
 
-            _pooledObject.ReleaseAction += Release;
-        }
+        _pooledObject.ReleaseAction += Release;
+    }
 
-        private void Release()
-        {
-            _pool.Release(_pooledObject);
-        }
+    private void Release()
+    {
+        _pool.Release(_pooledObject);
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : Singleton<GameManager>
 {
     private const string HIGH_SCORE = "KEY_HIGHSCORE";
-    
+
+    [SerializeField] private InputActionReference _action;
     [SerializeField] private UIManager _ui;
+    [SerializeField] private AudioSource _musicPlayer;
     
     [SerializeField] private float _baseSpeed = 1;
     [SerializeField] private float _speedGainPerDepth = 0.02f;
@@ -31,19 +34,32 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+        ResetStatics();
         HighScore = PlayerPrefs.GetFloat(HIGH_SCORE, 0);
     }
 
     public void Start()
     {
         //start game after cutscene
+        _action.action.Enable();
         StartGame();
     }
 
     private void Update()
     {
-        if (!HasGameStarted || HasGameEnded)
+        
+        if (!HasGameStarted)
         {
+            return;
+        }
+
+        if (HasGameEnded)
+        {
+            if (_action.action.triggered)
+            {
+                SceneUtil.RestartScene();
+            }
+
             return;
         }
         
@@ -58,6 +74,8 @@ public class GameManager : Singleton<GameManager>
 
     public static void EndGame()
     {
+        Instance._musicPlayer.Stop();
+        Instance._ui.GameOver();
         Debug.Log("GAME OVER");
         HasGameEnded = true;
         PlayerPrefs.Save();

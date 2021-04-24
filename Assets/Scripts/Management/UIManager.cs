@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
         
     [SerializeField] private TextMeshProUGUI _depthText;
     [SerializeField] private TextMeshProUGUI _highScoreText;
+    [SerializeField] private GameObject _gameOverScreen;
 
     private string _formerDepthText;
     private string _formerHighScoreText;
@@ -16,6 +17,7 @@ public class UIManager : MonoBehaviour
     {
         _formerDepthText = _depthText.text;
         _formerHighScoreText = _highScoreText.text;
+        _gameOverScreen.SetActive(false);
     }
 
     public void SetDepthText(float depth)
@@ -28,5 +30,10 @@ public class UIManager : MonoBehaviour
     {
         string highScoreString = highScore.ToString("F1");
         _highScoreText.text = _formerHighScoreText.Replace(KEY, highScoreString);
+    }
+
+    public void GameOver()
+    {
+        _gameOverScreen.SetActive(true);
     }
 }

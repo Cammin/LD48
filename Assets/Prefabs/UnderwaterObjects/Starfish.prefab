@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 7793926318271629577}
-  _spawnAngularVelocity: 360
+  _spawnAngularVelocity: 10
+  _collectSound: {fileID: 8300000, guid: 6e05712864edf7d49b4e4b41f9ce5a6c, type: 3}
+  _collectFXColor: {r: 1, g: 0.9753064, b: 0, a: 1}
   _instensityUponCollect: 1
 --- !u!1 &9102605045099431639
 GameObject:
