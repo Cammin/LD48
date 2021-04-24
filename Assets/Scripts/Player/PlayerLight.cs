@@ -19,6 +19,7 @@ public class PlayerLight : MonoBehaviour
     private void Update()
     {
         DecayUpdate();
+        UpdateLight();
     }
 
 
@@ -27,9 +28,9 @@ public class PlayerLight : MonoBehaviour
         _targetVisbility = Mathf.Max(_targetVisbility - Time.deltaTime * _decaySpeed, _minimumVisibility);
     }
 
-    public void IncreaseVisibility()
+    public void IncreaseVisibility(float amount)
     {
-        
+        _targetVisbility += amount;
     }
 
     public void UpdateLight()
