@@ -7,15 +7,16 @@ public class ParticleReturnToPool : MonoBehaviour
     public ParticleSystem _system;
     public IObjectPool<ParticleSystem> Pool;
 
-    void Start()
+    private void Start()
     {
         _system = GetComponent<ParticleSystem>();
         ParticleSystem.MainModule main = _system.main;
         main.stopAction = ParticleSystemStopAction.Callback;
     }
 
-    void OnParticleSystemStopped()
+    private void OnParticleSystemStopped()
     {
+        Debug.Log("RELEASE");
         Pool.Release(_system);
     }
 }

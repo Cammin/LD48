@@ -11,7 +11,7 @@ public class SetParticleSpeedOverGameDepth : MonoBehaviour
     {
         float speed = GameManager.DescendSpeed * _baseSpeedMultiplier;
 
-        Debug.Log(speed);
+        //Debug.Log(speed);
         foreach (ParticleSystem system in _systems)
         {
             SetSystem(system, speed);

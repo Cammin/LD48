@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
+using DefaultNamespace;
 using UnityEngine;
 
 public class GameSpawner : MonoBehaviour
 {
-    [SerializeField] private UnderwaterObject[] _prefabs;
+    [SerializeField] private WeightedPrefab[] _prefabs;
     [SerializeField] private AnimationCurve _spawnTimeOverTime;
     [SerializeField] private float _spawnVariancePosition;
     
@@ -49,13 +51,33 @@ public class GameSpawner : MonoBehaviour
 
     private void Spawn()
     {
-        UnderwaterObject atRandom = _prefabs.PickAtRandom();
+        UnderwaterObject atRandom = PickRandomWeightedObject();
         UnderwaterObjectPooler<UnderwaterObject> pooler = GetPoolerForPrefab(atRandom);
         UnderwaterObject underwaterObject = pooler.Get();
         
         transform.position = new Vector2(_spawnVariancePosition.AsRandomVariance(), transform.position.y);
         underwaterObject.PooledObj.transform.position = transform.position;
         underwaterObject.Init();
+    }
+
+    private UnderwaterObject PickRandomWeightedObject()
+    {
+        int max = _prefabs.Sum(p => p._spawnWeight);
+        int randomNumber = Random.Range(0, max); 
+        int sum = 0;
+
+        foreach (WeightedPrefab p in _prefabs)
+        {
+            if (randomNumber < sum + p._spawnWeight)
+            {
+                return p._prefab;
+            }
+            sum += p._spawnWeight;
+        }
+
+        //this should never happen
+        Debug.LogError("Error this should never happen");
+        return null;
     }
 
     private void SetTimer()

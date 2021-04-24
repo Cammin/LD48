@@ -10,12 +10,13 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private UIManager _ui;
     [SerializeField] private AudioSource _musicPlayer;
     
+    [SerializeField] private float _depthScoreFactor = 0.5f;
     [SerializeField] private float _baseSpeed = 1;
     [SerializeField] private float _speedGainPerDepth = 0.02f;
 
     private float _timeSinceGameStarted;
-    
-    
+
+
     public static bool HasGameStarted { get; private set; }
     public static bool HasGameEnded { get; private set; }
     public static float DescendSpeed { get; private set; }
@@ -42,26 +43,30 @@ public class GameManager : Singleton<GameManager>
     {
         //start game after cutscene
         _action.action.Enable();
+        _action.action.started += TryRestartGame;
+        
         StartGame();
+        
+    }
+
+    private void TryRestartGame(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Button Pressed");
+        if (HasGameEnded)
+        {
+            SceneUtil.RestartScene();
+        }
     }
 
     private void Update()
     {
         
-        if (!HasGameStarted)
+        if (!HasGameStarted || HasGameEnded)
         {
             return;
         }
 
-        if (HasGameEnded)
-        {
-            if (_action.action.triggered)
-            {
-                SceneUtil.RestartScene();
-            }
-
-            return;
-        }
+       
         
         GameUpdate();
     }
@@ -84,7 +89,7 @@ public class GameManager : Singleton<GameManager>
     private void GameUpdate()
     {
         DescendSpeed = CalculateDownwardSpeed();
-        Depth += DescendSpeed * Time.deltaTime;
+        Depth += DescendSpeed * Time.deltaTime * _depthScoreFactor;
 
         HighScore = Mathf.Max(HighScore, Depth);
         PlayerPrefs.SetFloat(HIGH_SCORE, HighScore);

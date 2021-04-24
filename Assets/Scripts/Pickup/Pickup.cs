@@ -8,6 +8,11 @@ public abstract class Pickup : UnderwaterObject
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (GameManager.HasGameEnded)
+        {
+            return;
+        }
+        
         if (!other.gameObject.TryGetComponent<Player>(out var player))
         {
             return;
