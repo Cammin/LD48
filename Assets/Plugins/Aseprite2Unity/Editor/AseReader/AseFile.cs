@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor.AseReader
 {
     public class AseFile
     {

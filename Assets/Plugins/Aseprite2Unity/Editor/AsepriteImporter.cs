@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Plugins.Aseprite2Unity.Editor.AseReader;
 using UnityEditor;
-
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     [UnityEditor.AssetImporters.ScriptedImporter(4, new string[] { "aseprite", "ase" })]
     public class AsepriteImporter : UnityEditor.AssetImporters.ScriptedImporter, IAseVisitor
@@ -53,7 +53,7 @@ namespace Aseprite2Unity.Editor
 #if UNITY_2018_3_OR_NEWER
             m_Context = ctx;
 
-            using (var reader = new AseReader(ctx.assetPath))
+            using (var reader = new AseReader.AseReader(ctx.assetPath))
             {
                 m_AseFile = new AseFile(reader);
                 m_AseFile.VisitContents(this);

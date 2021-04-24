@@ -1,14 +1,14 @@
 ﻿// Conversion of aseprite/src/doc/blend_funcs.cpp
+
 using System;
 using color_t = System.UInt32;
 using uint8_t = System.Byte;
-using uint16_t = System.UInt16;
 using uint32_t = System.UInt32;
 
-using dc = Aseprite2Unity.Editor.DocColor;
-using pc = Aseprite2Unity.Editor.PixmanCombine;
+using dc = Plugins.Aseprite2Unity.Editor.DocColor;
+using pc = Plugins.Aseprite2Unity.Editor.PixmanCombine;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     public static class Blender
     {

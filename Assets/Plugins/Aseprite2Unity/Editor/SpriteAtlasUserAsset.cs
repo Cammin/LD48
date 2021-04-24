@@ -11,7 +11,7 @@ using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     // Asset to help us manage sprite atlases which are kind of a pain for scripting
     public class SpriteAtlasUserAsset : ScriptableObject

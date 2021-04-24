@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEditor;
+﻿using UnityEditor;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     public static class AssetDatabaseEx
     {

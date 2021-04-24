@@ -3,7 +3,7 @@ using uint8_t = System.Byte;
 using uint16_t = System.UInt16;
 using uint32_t = System.UInt32;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     public static class DocColor
     {

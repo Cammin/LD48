@@ -4,7 +4,7 @@
 using uint8_t = System.Byte;
 using uint16_t = System.UInt16;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     public static class PixmanCombine
     {

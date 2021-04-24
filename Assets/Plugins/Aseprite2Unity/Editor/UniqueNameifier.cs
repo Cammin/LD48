@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Aseprite2Unity.Editor
+namespace Plugins.Aseprite2Unity.Editor
 {
     // Utiltiy class that helps us give items unique names. Must be kept in scope in order to work.
     // Will turn [Name] into [Name (1)], [Name (2)], etc. similar to how Unity gives unique names to objects
