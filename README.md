@@ -2,8 +2,8 @@
 My game for Ludum Dare 48. Finished in 27 hours of the 48 hours given
 
 
-# [Play on Itch.io](https://cammin.itch.io/not-the-urchins) (Not Ready Yet)
-### [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042) (Not Ready Yet)
+# [Play on Itch.io](https://cammin.itch.io/not-the-urchins)
+### [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042)
 ### [Public Trello](https://trello.com/b/BvTN68Ud/ld48)
 
 ### Personal goals I've set out to do before starting:
