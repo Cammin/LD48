@@ -1,8 +1,8 @@
-# LD48
+# LD48 - Not The Urchins!
 My game for Ludum Dare 48
 
 
-# [Play on Itch.io](https://cammin.itch.io/ld48-game-working-title) (Not Ready Yet)
+# [Play on Itch.io](https://cammin.itch.io/not-the-urchins) (Not Ready Yet)
 ### [Ludum Dare Game Page](https://ldjam.com/events/ludum-dare/48/$243042) (Not Ready Yet)
 ### [Public Trello](https://trello.com/b/BvTN68Ud/ld48)
 
