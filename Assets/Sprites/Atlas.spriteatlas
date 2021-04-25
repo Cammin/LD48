@@ -159,8 +159,8 @@ SpriteAtlas:
   - {fileID: -4254224853889960685, guid: a690189cb0c355d41bb701449187b219, type: 3}
   - {fileID: 3526307606565726050, guid: ad33e31eb7336c2448bbdb1fc793ea98, type: 3}
   - {fileID: 21300000, guid: 58253afe75d774c45bba5b649a482915, type: 3}
-  - {fileID: -3477856756702442466, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
   - {fileID: 1338631201917420662, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
+  - {fileID: -3477856756702442466, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
   m_PackedSpriteNamesToIndex:
   - Starfish.Sprites._0
   - GlowBulb.Sprites._0
@@ -173,8 +173,8 @@ SpriteAtlas:
   - Backdrop.Sprites._0
   - Urchin.Sprites._0
   - aseprite2unity-atlas-marker
-  - Rope.Sprites._0
   - Rope.Sprites._1
+  - Rope.Sprites._0
   m_RenderDataMap: {}
   m_Tag: Atlas
   m_IsVariant: 0
