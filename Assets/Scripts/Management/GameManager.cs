@@ -15,9 +15,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float _baseSpeed = 1;
     [SerializeField] private float _speedGainPerDepth = 0.02f;
 
-    private float _timeSinceGameStarted;
-
-
     public static bool HasGameStarted { get; private set; }
     public static bool HasGameEnded { get; private set; }
     public static float DescendSpeed { get; private set; }
@@ -103,7 +100,6 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        _timeSinceGameStarted = Time.time;
         HasGameStarted = true;
     }
 
@@ -131,7 +127,7 @@ public class GameManager : Singleton<GameManager>
 
     private float CalculateDownwardSpeed()
     {
-        return _baseSpeed + _speedGainPerDepth * (Time.time - _timeSinceGameStarted);
+        return _baseSpeed + _speedGainPerDepth * (Time.timeSinceLevelLoad);
     }
         
         

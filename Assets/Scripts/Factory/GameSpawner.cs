@@ -82,6 +82,6 @@ public class GameSpawner : MonoBehaviour
 
     private void SetTimer()
     {
-        _spawnCooldown.Set(_spawnTimeOverTime.Evaluate(Time.time));
+        _spawnCooldown.Set(_spawnTimeOverTime.Evaluate(Time.timeSinceLevelLoad));
     }
 }
