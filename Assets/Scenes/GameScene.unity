@@ -148,7 +148,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -0.49400043}
+  m_ConnectedAnchor: {x: 0, y: -0.18400002}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1847,7 +1847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2654920448201754494, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.82
+      value: 9.13
       objectReference: {fileID: 0}
     - target: {fileID: 2654920448201754494, guid: 6ce7ba3fa2612d34a8c5f489c6a153fd, type: 3}
       propertyPath: m_LocalPosition.z
