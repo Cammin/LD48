@@ -1,5 +1,5 @@
 # LD48 - Not The Urchins!
-My game for Ludum Dare 48. Finished in 26.5 hours of the 48 hours given
+My game for Ludum Dare 48. Finished in 27 hours of the 48 hours given
 
 
 # [Play on Itch.io](https://cammin.itch.io/not-the-urchins) (Not Ready Yet)
