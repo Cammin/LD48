@@ -12,10 +12,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _maxSpeed;
     [SerializeField] private float _turnAroundThreshold = 0.1f;
+    
 
-    private void Start()
+    private void OnEnable()
     {
         _axis.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _axis.action.Disable();
     }
 
     private void FixedUpdate()

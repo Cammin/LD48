@@ -16,12 +16,12 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     }
     protected virtual void ResetStatics(){}
     
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Instance = this as T;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         Instance = null;
     }

@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
     private const string HIGH_SCORE = "KEY_HIGHSCORE";
 
     [SerializeField] private InputActionReference _action;
+    [SerializeField] private InputActionReference _quit;
     [SerializeField] private UIManager _ui;
     [SerializeField] private AudioSource _musicPlayer;
     
@@ -42,12 +43,34 @@ public class GameManager : Singleton<GameManager>
     public void Start()
     {
         //start game after cutscene
-        _action.action.Enable();
-        _action.action.started += TryRestartGame;
+        
         
         StartGame();
         
     }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        
+        _action.action.Enable();
+        _quit.action.Enable();
+        
+        _action.action.started += TryRestartGame;
+        _quit.action.started += TryQuitGame;
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        
+        _action.action.Disable();
+        _quit.action.Disable();
+        
+        _action.action.started -= TryRestartGame;
+        _quit.action.started -= TryQuitGame;
+    }
+
 
     private void TryRestartGame(InputAction.CallbackContext obj)
     {
@@ -56,6 +79,13 @@ public class GameManager : Singleton<GameManager>
         {
             SceneUtil.RestartScene();
         }
+    }
+    private void TryQuitGame(InputAction.CallbackContext obj)
+    {
+        Debug.Log("Button Pressed");
+
+            SceneUtil.ToMainMenu();
+        
     }
 
     private void Update()

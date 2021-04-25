@@ -203,6 +203,10 @@ PrefabInstance:
       value: -205834
       objectReference: {fileID: 0}
     - target: {fileID: 1676941832648839880, guid: 077cf1c43580bc342942c8c6108b7406, type: 3}
+      propertyPath: m_CastsShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676941832648839880, guid: 077cf1c43580bc342942c8c6108b7406, type: 3}
       propertyPath: m_ShapePathHash
       value: 484912618
       objectReference: {fileID: 0}
