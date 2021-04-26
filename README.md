@@ -23,4 +23,4 @@ My game for Ludum Dare 48. Finished in 27 hours of the 48 hours given. Decided t
 - I finished a bit early before the submission deadline, but I strongly set out to only achieve what I planned from the start, and it got finished relatively early. I did not want to come up without a finished game. This helped inform me on scoping a game's progress better nonetheless.
 
 #### Things I didn't do
-- After hearing about the theme and conjuring a game idea, LDtk level design would not fit too well for the game I was going for. It turned into an arcade-tyle high score game. 
+- After hearing about the theme and conjuring a game idea, LDtk level design would not fit too well for the game I was going for. It turned into an arcade-style high score game. 
