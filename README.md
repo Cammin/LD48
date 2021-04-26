@@ -16,7 +16,7 @@ My game for Ludum Dare 48. Finished in 27 hours of the 48 hours given. Decided t
 
 ## Post Mortem
 ##### Things I did do
-- I learnt how to use Unity's input system in an easier fashin than what i've done before. I assigned inspector fields for InputActionReference, and away we go!
+- I learnt how to use Unity's input system in an easier fashion than what i've done before. I assigned inspector fields for InputActionReference, and away we go!
 - I accomplished Unity's new pooling system. I definitely spent too much time making the pooling where it could have been made faster without pooling, but I'm glad I did it.
 - I composed music for the first time ever. The title screen's is a bit rubbish, but the gameplay's is alright.
 - I did use Aseprite to make all of the art, and the import process into unity is flawless, It was done so much faster thanks to the Aseprite2Unity tool.
